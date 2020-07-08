@@ -9,7 +9,7 @@ const LANG_PREF = 'Towa_ArkTable_Lang';
 
 import Upgrade from '../../models/Upgrade';
 import sumRequirements from '../../models/sumRequirements';
-import generateArkPlannerData from '../../services/arkplanner/generatePayload';
+import generateArkPlannerV2Data from '../../services/arkplanner/generateV2Payload';
 
 const ArkSettings = ({
 	ir,
@@ -79,7 +79,7 @@ const ArkSettings = ({
 	};
 
 	const summary = sumRequirements(state.records, state.stock, []);
-	const ark_planner_data = generateArkPlannerData(summary, state.stock);
+	const ark_planner_data = generateArkPlannerV2Data(summary, state.stock);
 
 	return (
 		<div class={style.wrapper}>
@@ -184,7 +184,7 @@ const ArkSettings = ({
 				}
 				<h2>{
 					ir('settings-arkplanner-export-prefix', '')
-				}<a target="_blank" rel="noreferrer noopener" href="https://planner.penguin-stats.io/">ArkPlanner</a>{
+				}<a target="_blank" rel="noreferrer noopener" href="https://penguin-stats.io/planner">ArkPlanner</a>{
 					ir('settings-arkplanner-export-suffix', '')
 				}</h2>
 				<div class={style.data_area}>

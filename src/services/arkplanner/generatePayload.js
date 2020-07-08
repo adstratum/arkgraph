@@ -9,3 +9,4 @@ const generateArkPlannerData = (summary, stock) => MATERIALS.map(
 );
 
 export default generateArkPlannerData;
+
